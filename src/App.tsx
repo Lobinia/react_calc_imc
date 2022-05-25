@@ -4,6 +4,7 @@ import poweredImage from "./assets/powered.png";
 
 const App = () => {
   const [heightField, setHeightField] = useState<number>(0);
+  const [weightField, setWeightField] = useState<number>(0);
 
   return (
     <div className={styles.main}>
@@ -24,7 +25,13 @@ const App = () => {
           type="number"
           placeholder="Digite sua altura. Ex: 1.5 (em metros)"
           value={heightField > 0 ? heightField : ''}
-          onChange={e => setHeightField(parseInt(e.target.value))}
+          onChange={e => setHeightField(parseFloat(e.target.value))}
+          />
+          <input
+          type="number"
+          placeholder="Digite seu peso. Ex: 52.5 (em kilogramas)"
+          value={weightField > 0 ? weightField : ''}
+          onChange={e => setWeightField(parseFloat(e.target.value))}
           />
         </div>
         <div className={styles.rightSide}>...2</div>
